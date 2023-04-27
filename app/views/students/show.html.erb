@@ -1,0 +1,88 @@
+<style>
+  body{
+    background-color: #ddd;
+    
+ }
+</style>
+<br><br>
+<div class="container">
+	<div class="card">
+	  <div class="card-header">
+	    Student Details
+	  </div>
+	  <div class="card-body">
+	    <h4 class="card-title"  style="color:teal;"><%= @student.student_name %></h4><br>
+	    <h5 class="card-text"><strong>Roll Number: </strong>&nbsp;<%= @student.roll%></h5><br>
+        <h5 class="card-text"><strong>Section:</strong>&nbsp;<%=@student.section%></h5><br>
+        <table class="table table-striped table-bordered">
+        	<thead>
+        	<tr>
+              <th>SUBJECT</th>
+              <th>MARKS</th>
+            </tr>
+           </thead>
+
+          <tbody>
+            <tr>
+                <th>Maths</th>
+                <td style="width:50%;"><%=@student.maths %></td>
+            </tr>
+            <tr>
+                <th>English</th>
+                <td><%=@student.english%></td>
+            </tr>
+            <tr>
+                <th>Science</th>
+                <td><%=@student.science %></td>
+            </tr>
+             <tr>
+								<th> <button onclick="myFunction()" class="btn btn-success">Calculate Total</button>
+              </th>
+							<td>	
+								<h4><p id="demo"></p></h4>
+								<script>
+								function myFunction() {
+								  document.getElementById("demo").innerHTML = <%=@student.maths+@student.english+@student.science%>;
+								}
+								</script></td>
+             </tr>
+             <tr>
+								<th> <button onclick="myFunction1()" class="btn btn-warning">Calculate percentage</button>
+              </th>
+							<td>	
+								<h4><p id="demo1"></p></h4>
+								<script>
+								function myFunction1() {
+								  document.getElementById("demo1").innerHTML =<%=((((@student.maths+@student.english+@student.science).to_f)/300.to_f)*100)%>+"%" ;
+								}
+								
+								</script></td>
+             </tr>
+
+             
+
+  		    </tbody>  
+	    </table>
+	     <%=link_to 'Back to students',students_path,class:"btn btn-secondary"%>
+	  </div>
+	</div>
+	
+</div>
+
+<!--
+<p><strong>Maths:</strong><%=@student.maths %></p>
+		    <p><strong>English:</strong><%=@student.english%></p>
+		    <p><strong>Science:</strong><%=@student.science%></p>
+		    <p><strong>Total:</strong><%=@student.total %></p>
+
+
+<div class="container">	
+	<h1>showing students details</h1>
+	<p><strong>Student_name:</strong><%=@student.student_name %></p>
+	<p><strong>Roll number:</strong><%=@student.roll %></p>
+	<p><strong>Section:</strong><%=@student.section%></p>
+	<p><strong>Maths:</strong><%=@student.maths %></p>
+	<p><strong>English:</strong><%=@student.english%></p>
+	<p><strong>Science:</strong><%=@student.science%></p>
+	<p><strong>Total:</strong><%=@student.total %></p>
+</div>

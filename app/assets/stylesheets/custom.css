@@ -1,0 +1,6 @@
+@import  'bootsrap/dist/css/bootsrap';
+
+.navbar-brand
+{
+	font-size:2rem;
+}
