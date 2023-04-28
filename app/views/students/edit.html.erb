@@ -26,6 +26,10 @@
 		<%=f.label :Science %><br>
 		<%=f.text_field :science,class:"form-control"%>
 	</p>
+	<p>
+		<%=f.label :total %><br>
+        <%= f.text_field :total, class: "form-control", placeholder: "Enter your Total Marks", value: @student.maths + @student.english + @student.science %>
+	</p>
 	
 	<p>
 		<%=f.submit class:"btn btn-secondary"%>

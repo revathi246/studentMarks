@@ -58,7 +58,11 @@
 								
 								</script></td>
              </tr>
-
+             <tr>
+             	<th>Class Topper</th>
+             	<% max_total = Student.maximum(:total)%>
+             	<td><%= Student.where(total: max_total).pluck(:student_name).first%></td>
+             </tr>
              
 
   		    </tbody>  
